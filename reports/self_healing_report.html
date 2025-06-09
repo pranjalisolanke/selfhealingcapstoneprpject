@@ -1,0 +1,41 @@
+
+<html>
+<head>
+  <title>Self-Healing Locator Report</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2em; }
+    .event { border:1px solid #ccc; margin:1em 0; padding:1em; border-radius: 8px; }
+    .success { color: green; }
+    .fail { color: red; }
+    h1, h2 { color: #2d6cdf; }
+  </style>
+</head>
+<body>
+<h1>🩹 Self-Healing Locator Report</h1>
+<h2>Summary</h2>
+<ul>
+  <li><b>Total Attempts:</b> 2</li>
+  <li><b>Successful Healing:</b> 2</li>
+  <li><b>Failed Healing:</b> 0</li>
+  <li><b>Success Rate:</b> 100.0%</li>
+</ul>
+<h2>Healing Events</h2>
+
+    <div class="event">
+      <b>Event 1:</b><br>
+      <b>Element:</b> user_dropdown<br>
+      <b>Description:</b> User dropdown menu in the top right corner with the user's name<br>
+      <b>Failed Strategies:</b> 1<br>
+      <b>Successful Strategy:</b> <span class="success">xpath='//*[contains(@class, 'user')]'</span><br>
+      <b>Timestamp:</b> 2025-06-06 13:35:34<br>
+    </div>
+    
+    <div class="event">
+      <b>Event 2:</b><br>
+      <b>Element:</b> dashboard_heading<br>
+      <b>Description:</b> Dashboard heading or title on the main dashboard page<br>
+      <b>Failed Strategies:</b> 1<br>
+      <b>Successful Strategy:</b> <span class="success">xpath='//*[contains(@class, 'dashboard')]'</span><br>
+      <b>Timestamp:</b> 2025-06-06 13:36:04<br>
+    </div>
+    </body></html>

@@ -1,0 +1,170 @@
+{
+  "summary": {
+    "total_attempts": 9,
+    "successful_healing": 9,
+    "failed_healing": 0,
+    "success_rate": 100.0
+  },
+  "events": [
+    {
+      "element": "user_dropdown",
+      "description": "User dropdown menu in the top right corner with the user's name",
+      "failed": [
+        [
+          "css selector",
+          ".wrong-user-dropdown"
+        ]
+      ],
+      "succeeded": [
+        "xpath",
+        "//*[contains(@class, 'user')]"
+      ],
+      "timestamp": "2025-06-06 16:18:16",
+      "time_taken": 30.24486994743347
+    },
+    {
+      "element": "first_name_field",
+      "description": "First name input field on Add Employee page",
+      "failed": [
+        [
+          "name",
+          "wrong_firstName"
+        ],
+        [
+          "name",
+          "wrong_firstName"
+        ]
+      ],
+      "succeeded": [
+        "xpath",
+        "//*[contains(@name, 'first')]"
+      ],
+      "timestamp": "2025-06-06 16:18:40",
+      "time_taken": 20.10173726081848
+    },
+    {
+      "element": "first_name_field",
+      "description": "First name input field on Add Employee page",
+      "failed": [
+        [
+          "name",
+          "wrong_firstName"
+        ],
+        [
+          "name",
+          "wrong_firstName"
+        ]
+      ],
+      "succeeded": [
+        "xpath",
+        "//*[contains(@name, 'first')]"
+      ],
+      "timestamp": "2025-06-06 16:18:51",
+      "time_taken": 10.053290843963623
+    },
+    {
+      "element": "middle_name_input",
+      "description": "Middle name input field on Add Employee page",
+      "failed": [
+        [
+          "name",
+          "wrong_middleName"
+        ]
+      ],
+      "succeeded": [
+        "xpath",
+        "//*[contains(@name, 'middle')]"
+      ],
+      "timestamp": "2025-06-06 16:19:11",
+      "time_taken": 20.154147148132324
+    },
+    {
+      "element": "last_name_field",
+      "description": "Last name input field on Add Employee page",
+      "failed": [
+        [
+          "name",
+          "wrong_lastName"
+        ]
+      ],
+      "succeeded": [
+        "xpath",
+        "//*[contains(@name, 'last')]"
+      ],
+      "timestamp": "2025-06-06 16:19:31",
+      "time_taken": 20.18171739578247
+    },
+    {
+      "element": "success_message",
+      "description": "Success message after adding employee",
+      "failed": [
+        [
+          "css selector",
+          ".wrong-success-message"
+        ],
+        [
+          "css selector",
+          ".wrong-success-message"
+        ]
+      ],
+      "succeeded": [
+        "xpath",
+        "//*[contains(@class, 'after')]"
+      ],
+      "timestamp": "2025-06-06 16:21:23",
+      "time_taken": 110.53343725204468
+    },
+    {
+      "element": "success_message",
+      "description": "Success message after adding employee",
+      "failed": [
+        [
+          "css selector",
+          ".wrong-success-message"
+        ],
+        [
+          "css selector",
+          ".wrong-success-message"
+        ]
+      ],
+      "succeeded": [
+        "xpath",
+        "//*[contains(@class, 'after')]"
+      ],
+      "timestamp": "2025-06-06 16:21:33",
+      "time_taken": 10.086268901824951
+    },
+    {
+      "element": "employee_list_heading",
+      "description": "Employee List heading on PIM page",
+      "failed": [
+        [
+          "css selector",
+          "h5.wrong-heading"
+        ]
+      ],
+      "succeeded": [
+        "xpath",
+        "//*[contains(@class, 'employee')]"
+      ],
+      "timestamp": "2025-06-06 16:22:03",
+      "time_taken": 30.286846160888672
+    },
+    {
+      "element": "employee_name_search",
+      "description": "Employee name search input field",
+      "failed": [
+        [
+          "css selector",
+          "input.wrong-employee-name"
+        ]
+      ],
+      "succeeded": [
+        "xpath",
+        "//*[contains(@class, 'employee')]"
+      ],
+      "timestamp": "2025-06-06 16:22:34",
+      "time_taken": 30.18275547027588
+    }
+  ]
+}

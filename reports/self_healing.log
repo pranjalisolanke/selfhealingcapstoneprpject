@@ -1,0 +1,8 @@
+2025-06-01 22:13:57,916 - INFO - No learned locators file found. Starting fresh.
+2025-06-01 22:13:57,933 - INFO - No learned locators file found. Starting fresh.
+2025-06-01 22:18:38,021 - INFO - No learned locators file found. Starting fresh.
+2025-06-01 23:11:46,200 - INFO - No learned locators file found. Starting fresh.
+2025-06-01 23:12:02,151 - WARNING - Self-healing activated for 'username_field': Primary locator failed, using alternative: name=username
+2025-06-01 23:12:02,151 - INFO - Learned new strategy for 'username_field': ('name', 'username')
+2025-06-01 23:12:02,154 - INFO - Saved learned locators for 1 elements to reports/learned_locators.json
+2025-06-01 23:12:02,154 - INFO - Self-healing successful for 'username_field' using ('name', 'username')

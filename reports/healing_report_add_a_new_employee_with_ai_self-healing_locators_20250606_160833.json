@@ -1,0 +1,42 @@
+{
+  "summary": {
+    "total_attempts": 2,
+    "successful_healing": 2,
+    "failed_healing": 0,
+    "success_rate": 100.0
+  },
+  "events": [
+    {
+      "element": "user_dropdown",
+      "description": "User dropdown menu in the top right corner with the user's name",
+      "failed": [
+        [
+          "css selector",
+          ".wrong-user-dropdown"
+        ]
+      ],
+      "succeeded": [
+        "xpath",
+        "//*[contains(@class, 'user')]"
+      ],
+      "timestamp": "2025-06-06 16:08:10",
+      "time_taken": 30.25609850883484
+    },
+    {
+      "element": "first_name_field",
+      "description": "First name input field on Add Employee page",
+      "failed": [
+        [
+          "name",
+          "wrong_firstName"
+        ]
+      ],
+      "succeeded": [
+        "xpath",
+        "//*[contains(@name, 'first')]"
+      ],
+      "timestamp": "2025-06-06 16:08:33",
+      "time_taken": 20.155207872390747
+    }
+  ]
+}
