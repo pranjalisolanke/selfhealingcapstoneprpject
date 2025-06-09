@@ -1,0 +1,26 @@
+{
+  "username_field": [
+    {
+      "by": "name",
+      "value": "username"
+    }
+  ],
+  "password_field": [
+    {
+      "by": "name",
+      "value": "password"
+    }
+  ],
+  "user_dropdown": [
+    {
+      "by": "xpath",
+      "value": "//*[contains(@class, 'user')]"
+    }
+  ],
+  "dashboard_heading": [
+    {
+      "by": "xpath",
+      "value": "//*[contains(@class, 'dashboard')]"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "summary": {
+    "total_attempts": 4,
+    "successful_healing": 4,
+    "failed_healing": 0,
+    "success_rate": 100.0
+  },
+  "events": [
+    {
+      "element": "username_field",
+      "description": "username input field on login page",
+      "failed": [
+        [
+          "name",
+          "wrongusername"
+        ]
+      ],
+      "succeeded": [
+        "name",
+        "username"
+      ],
+      "timestamp": "2025-06-09 17:15:58",
+      "time_taken": 10.148431062698364
+    },
+    {
+      "element": "password_field",
+      "description": "password input field on login page",
+      "failed": [
+        [
+          "name",
+          "wrongpassword"
+        ]
+      ],
+      "succeeded": [
+        "name",
+        "password"
+      ],
+      "timestamp": "2025-06-09 17:16:08",
+      "time_taken": 10.112693071365356
+    },
+    {
+      "element": "user_dropdown",
+      "description": "User dropdown menu in the top right corner with the user's name",
+      "failed": [
+        [
+          "css selector",
+          ".wrong-user-dropdown"
+        ]
+      ],
+      "succeeded": [
+        "xpath",
+        "//*[contains(@class, 'user')]"
+      ],
+      "timestamp": "2025-06-09 17:16:40",
+      "time_taken": 30.16794228553772
+    },
+    {
+      "element": "dashboard_heading",
+      "description": "Dashboard heading or title on the main dashboard page",
+      "failed": [
+        [
+          "css selector",
+          "h6.wrong-dashboard-heading"
+        ]
+      ],
+      "succeeded": [
+        "xpath",
+        "//*[contains(@class, 'dashboard')]"
+      ],
+      "timestamp": "2025-06-09 17:17:11",
+      "time_taken": 30.207067489624023
+    }
+  ]
+}
