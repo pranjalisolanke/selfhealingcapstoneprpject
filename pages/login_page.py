@@ -12,13 +12,13 @@ class LoginPage(BasePage):
         self.username_field = self.create_ai_locator(
             "username_field",
             "username input field on login page",
-            (By.NAME, 'wrongusername'),  # AI-learned primary locator
+            (By.NAME, 'username'),  # AI-learned primary locator
         )
         
         self.password_field = self.create_ai_locator(
             "password_field",
             "password input field on login page",
-            (By.NAME, 'wrongpassword'),  # AI-learned primary locator
+            (By.NAME, 'password'),  # AI-learned primary locator
         )
         
         self.login_button = self.create_ai_locator(
