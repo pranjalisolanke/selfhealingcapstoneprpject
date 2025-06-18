@@ -2,7 +2,7 @@ import json
 import os
 
 # Path to your self-healing JSON report
-HEALING_JSON = "reports/healing_report_login_with_ai-powered_self-healing_locators_20250606_133605.json"
+HEALING_JSON = "reports/healing_report_login_with_ai-powered_self-healing_locators_20250618_113940.json"
 OUTPUT_HTML = "reports/self_healing_report.html"
 
 if not os.path.exists(HEALING_JSON):

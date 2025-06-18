@@ -89,12 +89,19 @@ def after_scenario(context, scenario):
                 # Update source code with learned locators using the separate function
                 print("\n📝 Updating source code with learned locators...")
                 try:
-                    # Use the imported function instead of a method on the driver
-                    result = update_source_code_with_locators("pages/login_page.py", context.driver.learned_locators)
-                    if result:
-                        print("✅ Source code updated successfully")
+                                
+                    # Update login_page.py
+                    result_login = update_source_code_with_locators("pages/login_page.py", context.driver.learned_locators)
+                    # Update pim_page.py
+                    result_pim = update_source_code_with_locators("pages/pim_page.py", context.driver.learned_locators)
+                    # Update leave_page.py
+                    result_leave = update_source_code_with_locators("pages/leave_page.py", context.driver.learned_locators)
+                    result_time = update_source_code_with_locators("pages/timesheet_page.py", context.driver.learned_locators)
+                    if result_login or result_pim or result_leave or result_time:
+                        print("✅ Source code updated successfully for login_page.py, pim_page.py, and/or leave_page.py")
                     else:
                         print("ℹ️ No source code updates were needed")
+
                 except Exception as e:
                     print(f"⚠️ Error updating source code: {str(e)}")
                     traceback.print_exc()

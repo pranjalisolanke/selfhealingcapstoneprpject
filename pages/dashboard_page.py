@@ -34,28 +34,27 @@ class DashboardPage(BasePage):
         self.admin_menu_item = self.create_ai_locator(
             "admin_menu_item",
             "Admin module menu item in the left sidebar navigation",
-            (By.XPATH, "//span[text()='Wrong Admin Text']")  # Wrong locator
+            (By.XPATH, "//span[text()='Wrong Admin Text']") 
         )
         
         self.pim_menu_item = self.create_ai_locator(
             "pim_menu_item",
             "PIM module menu item in the left sidebar navigation",
-            (By.XPATH, "//span[text()='PIM']")  # Wrong locator
+            (By.XPATH, "//span[text()='PIM']")  
         )
         
         self.leave_menu_item = self.create_ai_locator(
             "leave_menu_item",
             "Leave module menu item in the left sidebar navigation",
-            (By.XPATH, "//span[text()='Wrong Leave Text']")  # Wrong locator
+            (By.XPATH, "//span[text()='Leave']") 
         )
-    
+       
     def wait_for_page_load(self, timeout=10):
         """Wait for page to load completely"""
         try:
             WebDriverWait(self.driver.driver, timeout).until(
                 lambda d: d.execute_script("return document.readyState") == "complete"
             )
-            # Add a small delay to allow any JavaScript to finish
             time.sleep(0.5)
         except Exception as e:
             print(f"⚠️ Page did not load completely after {timeout} seconds: {str(e)}")
@@ -94,8 +93,7 @@ class DashboardPage(BasePage):
     def logout(self):
         """Logout from the application"""
         self.click(self.user_dropdown)
-        
-        # Find and click the logout link
+    
         logout_link = self.create_ai_locator(
             "logout_link",
             "Logout link in user dropdown menu",

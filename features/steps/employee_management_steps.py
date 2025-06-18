@@ -26,17 +26,13 @@ def step_click_add_employee(context):
 @when('I enter employee details')
 def step_enter_employee_details(context):
     logging.info("Entering employee details")
-    # Get the first row of data (excluding header)
     row = context.table[0]
     first_name = row['First Name']
     last_name = row['Last Name']
     middle_name = row['Middle Name']
     employee_id = row['Employee ID']
     
-    # Store for later verification
     context.employee_full_name = f"{first_name} {last_name} {middle_name} {employee_id }"
-    
-    # Enter the details
     context.pim_page.enter_employee_details(first_name, last_name, middle_name, employee_id)
     logging.info(f"Entered details for employee: {first_name} {last_name}{middle_name}  ID: {employee_id}") 
 
