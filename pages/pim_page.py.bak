@@ -1,4 +1,3 @@
-# pages/pim_page.py
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 import os
@@ -12,16 +11,15 @@ class PIMPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
        
-        # All locators are intentionally wrong XPaths to trigger self-healing
         self.add_employee_button = self.create_ai_locator(
             "add_employee_button",
             "Add Employee button on PIM page",
-            (By.XPATH, "//ul//li//a[text()='Add Employee']"),  # AI-learned primary locator
+            (By.XPATH, "//ul//li//a[text()='Add Employee']"), 
         )
         self.employee_list_heading = self.create_ai_locator(
             "employee_list_heading",
             "Employee List heading on PIM page",
-            (By.XPATH, "//h5[contains(@class, 'wrong-heading')]")  # Wrong XPath
+            (By.XPATH, "//h5[contains(@class, 'wrong-heading')]")  
         )
         self.first_name_field = self.create_ai_locator(
             "first_name_field",
@@ -51,22 +49,22 @@ class PIMPage(BasePage):
         self.success_message = self.create_ai_locator(
             "success_message",
             "Success message after adding employee",
-            (By.XPATH, "//*[contains(@class, 'after')]"),  # AI-learned primary locator
+            (By.XPATH, "//*[contains(@class, 'after')]"), 
         )
         self.search_button = self.create_ai_locator(
             "search_button",
             "Search button on employee list",
-            (By.XPATH, "//button[contains(@class, 'wrong-search')]")  # Wrong XPath
+            (By.XPATH, "//button[contains(@class, 'wrong-search')]")  
         )
         self.employee_name_search = self.create_ai_locator(
             "employee_name_search",
             "Employee name search input field",
-            (By.XPATH, "//input[contains(@class, 'wrong-employee-name')]")  # Wrong XPath
+            (By.XPATH, "//input[contains(@class, 'wrong-employee-name')]")  
         )
         self.employee_table = self.create_ai_locator(
             "employee_table",
             "Employee list table",
-            (By.XPATH, "//table[contains(@class, 'wrong-table')]")  # Wrong XPath
+            (By.XPATH, "//table[contains(@class, 'wrong-table')]") 
         )
    
     def click_add_employee(self):
@@ -173,5 +171,3 @@ def after_scenario(context, scenario):
     if hasattr(context.driver, 'learned_locators'):
         from utils.code_updater import update_source_code_with_locators
         update_source_code_with_locators("pages/pim_page.py", context.driver.learned_locators)
- 
- 

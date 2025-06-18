@@ -1,4 +1,3 @@
-# pages/login_page.py
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 import time
@@ -8,35 +7,34 @@ class LoginPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
         
-        # Define locators with intentionally wrong strategies to demonstrate AI healing
         self.username_field = self.create_ai_locator(
             "username_field",
             "username input field on login page",
-            (By.XPATH, "//*[contains(@name, 'username')]"),  # AI-learned primary locator
+            (By.XPATH, "//*[contains(@name, 'username')]"),  
         )
         
         self.password_field = self.create_ai_locator(
             "password_field",
             "password input field on login page",
-            (By.NAME, 'password'),  # AI-learned primary locator
+            (By.NAME, 'password'), 
         )
         
         self.login_button = self.create_ai_locator(
             "login_button",
             "login submit button",
-            (By.CSS_SELECTOR, "button[type='submit']"),  # AI-learned primary locator
+            (By.CSS_SELECTOR, "button[type='submit']"),  
         )
         
         self.login_form = self.create_ai_locator(
             "login_form",
             "login form container",
-            (By.CSS_SELECTOR, "form.wrong-login-form")  # Wrong locator
+            (By.CSS_SELECTOR, "form.wrong-login-form")  
         )
         
         self.logo = self.create_ai_locator(
             "logo",
             "OrangeHRM logo on login page",
-            (By.CSS_SELECTOR, "img.wrong-logo")  # Wrong locator
+            (By.CSS_SELECTOR, "img.wrong-logo") 
         )
     
     def navigate_to(self, url):
@@ -50,7 +48,6 @@ class LoginPage(BasePage):
             WebDriverWait(self.driver.driver, timeout).until(
                 lambda d: d.execute_script("return document.readyState") == "complete"
             )
-            # Add a small delay to allow any JavaScript to finish
             time.sleep(0.5)
         except Exception as e:
             print(f"⚠️ Page did not load completely after {timeout} seconds: {str(e)}")

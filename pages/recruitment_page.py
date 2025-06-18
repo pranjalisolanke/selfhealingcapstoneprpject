@@ -10,14 +10,12 @@ class RecruitmentPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
         
-        # Navigation locators
         self.recruitment_menu = self.create_ai_locator(
             "recruitment_menu",
             "Recruitment menu item in the main navigation",
             (By.XPATH, "//span[text()='Recruitment']"),
         )
         
-        # Add button
         self.add_button = self.create_ai_locator(
             "add_button",
             "Add button on recruitment page",
@@ -28,7 +26,6 @@ class RecruitmentPage(BasePage):
             ]
         )
         
-        # Candidate form fields
         self.first_name_input = self.create_ai_locator(
             "first_name_input",
             "First name input field on Add Candidate page",
@@ -124,21 +121,11 @@ class RecruitmentPage(BasePage):
     
     def enter_candidate_details(self, first_name, middle_name, last_name, email, vacancy):
         logging.info(f"Entering candidate details: {first_name} {middle_name} {last_name}, {email}, {vacancy}")
-        
-        # Enter first name
         self.input_text(self.first_name_input, first_name)
-        
-        # Enter middle name
         self.input_text(self.middle_name_input, middle_name)
-        
-        # Enter last name
         self.input_text(self.last_name_input, last_name)
-        
-        # Select vacancy
         self.click(self.vacancy_dropdown)
-        time.sleep(1)  # Wait for dropdown to open
-        
-        # Select the vacancy option
+        time.sleep(1)  
         vacancy_option = self.create_ai_locator(
             "vacancy_option",
             f"Vacancy option for {vacancy}",
@@ -149,10 +136,8 @@ class RecruitmentPage(BasePage):
             ]
         )
         self.click(vacancy_option)
-        
-        # Enter email
+
         self.input_text(self.email_input, email)
-        
         logging.info("Candidate details entered successfully")
     
     def click_save_button(self):
@@ -172,14 +157,8 @@ class RecruitmentPage(BasePage):
     
     def is_candidate_in_list(self, candidate_name):
         logging.info(f"Checking if candidate {candidate_name} is in the list")
-        
-        # Wait for candidate list to load
         self.wait_for_element_visible(self.candidate_list, timeout=15)
-        
-        # Get the HTML of the candidate list
         candidate_list_html = self.get_element_html(self.candidate_list)
-        
-        # Check if the candidate name is in the list
         result = candidate_name in candidate_list_html
         
         if result:

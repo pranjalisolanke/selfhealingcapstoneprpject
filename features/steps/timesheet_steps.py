@@ -1,4 +1,3 @@
-# steps/timesheet_steps.py
 from behave import given, when, then
 from pages.login_page import LoginPage
 from pages.timesheet_page import TimesheetPage
@@ -22,7 +21,6 @@ def step_enter_employee_name(context):
 def step_click_view_button(context):
     logging.info("Clicking view button")
     context.timesheet_page.click_view_button()
-    # Allow time for the timesheet to load
     time.sleep(2)
     logging.info("View button clicked")
 
@@ -30,14 +28,8 @@ def step_click_view_button(context):
 def step_verify_timesheet_status(context):
     logging.info("Verifying timesheet status")
     status_text = context.timesheet_page.verify_timesheet_status()
-    
-    # Verify status contains expected text
     assert status_text is not None, "Timesheet status could not be verified"
-    
-    # Log the actual status for reference
     logging.info(f"Timesheet status verified: {status_text}")
-    
-    # Update learned locators if any were used
     if hasattr(context.driver, 'learned_locators') and context.driver.learned_locators:
         logging.info("Updating source code with learned locators")
         context.timesheet_page.update_source_code_with_learned_locators()
@@ -46,17 +38,13 @@ def step_verify_timesheet_status(context):
 def step_verify_recorded_hours(context):
     logging.info("Verifying recorded hours in timesheet")
     has_hours = context.timesheet_page.verify_recorded_hours()
-    
-    # Assert that hours are recorded
     assert has_hours, "No hours were found in the timesheet"
     logging.info("Successfully verified timesheet has recorded hours")
-    
-    # Take screenshot for evidence
+
     screenshot_path = f"screenshots/timesheet_hours_{time.strftime('%Y%m%d_%H%M%S')}.png"
     context.driver.save_screenshot(screenshot_path)
     logging.info(f"Screenshot saved to {screenshot_path}")
     
-    # Update learned locators if any were used
     if hasattr(context.driver, 'learned_locators') and context.driver.learned_locators:
         logging.info("Updating source code with learned locators")
         context.timesheet_page.update_source_code_with_learned_locators()

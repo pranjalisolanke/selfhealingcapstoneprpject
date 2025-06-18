@@ -1,4 +1,3 @@
-# pages/timesheet_page.py
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 import os
@@ -11,8 +10,7 @@ import logging
 class TimesheetPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
-        
-        # All locators with self-healing capability
+    
         self.time_menu = self.create_ai_locator(
             "time_menu",
             "Time menu item in the main navigation",
@@ -22,67 +20,67 @@ class TimesheetPage(BasePage):
         self.employee_name_input = self.create_ai_locator(
             "employee_name_input",
             "Employee name input field on timesheet page",
-            (By.XPATH, "//input[@placeholder='Type for hints...']"),  # Primary locator
+            (By.XPATH, "//input[@placeholder='Type for hints...']"), 
         )
         
         self.employee_autocomplete_option = self.create_ai_locator(
             "employee_autocomplete_option",
             "Autocomplete option for employee name",
-            (By.XPATH, "//div[@role='option']"),  # Primary locator
+            (By.XPATH, "//div[@role='option']"), 
         )
         
         self.view_button = self.create_ai_locator(
             "view_button",
             "View button on timesheet page",
-            (By.XPATH, "//button[@type='submit']"),  # Primary locator
+            (By.XPATH, "//button[@type='submit']"), 
         )
         
         self.timesheet_status = self.create_ai_locator(
             "timesheet_status",
             "Timesheet status indicator",
-            (By.XPATH, "//*[contains(@class, 'timesheet')]"),  # AI-learned primary locator
+            (By.XPATH, "//*[contains(@class, 'timesheet')]"),  
         )
         
         self.timesheet_table = self.create_ai_locator(
             "timesheet_table",
             "Timesheet data table",
-            (By.XPATH, "//*[contains(@class, 'timesheet')]"),  # AI-learned primary locator
+            (By.XPATH, "//*[contains(@class, 'timesheet')]"),  
         )
         
         self.timesheet_hours = self.create_ai_locator(
             "timesheet_hours",
             "Hours recorded in timesheet",
-            (By.XPATH, "//div[contains(@class,'oxd-table-cell')]//div[contains(@class,'oxd-table-cell-actions')]"),  # Primary locator
+            (By.XPATH, "//div[contains(@class,'oxd-table-cell')]//div[contains(@class,'oxd-table-cell-actions')]"), 
         )
         
         self.add_timesheet_button = self.create_ai_locator(
             "add_timesheet_button",
             "Add timesheet button",
-            (By.XPATH, "//button[contains(.,'Add')]"),  # Primary locator
+            (By.XPATH, "//button[contains(.,'Add')]"),  
         )
         
         self.edit_button = self.create_ai_locator(
             "edit_button",
             "Edit button for timesheet",
-            (By.XPATH, "//button[contains(.,'Edit')]"),  # Primary locator
+            (By.XPATH, "//button[contains(.,'Edit')]"),  
         )
         
         self.submit_button = self.create_ai_locator(
             "submit_button",
             "Submit button for timesheet",
-            (By.XPATH, "//button[contains(.,'Submit')]"),  # Primary locator
+            (By.XPATH, "//button[contains(.,'Submit')]"), 
         )
         
         self.confirm_button = self.create_ai_locator(
             "confirm_button",
             "Confirm button in dialog",
-            (By.XPATH, "//div[contains(@class,'oxd-dialog-container')]//button[contains(.,'Yes')]"),  # Primary locator
+            (By.XPATH, "//div[contains(@class,'oxd-dialog-container')]//button[contains(.,'Yes')]"),  
         )
         
         self.success_message = self.create_ai_locator(
             "success_message",
             "Success message after timesheet operation",
-            (By.XPATH, "//div[contains(@class,'oxd-toast-container')]"),  # Primary locator
+            (By.XPATH, "//div[contains(@class,'oxd-toast-container')]"),  
         )
     
     def navigate_to_timesheet(self):
@@ -95,7 +93,7 @@ class TimesheetPage(BasePage):
     def enter_employee_name(self, employee_name):
         logging.info(f"Entering employee name: {employee_name}")
         self.input_text(self.employee_name_input, employee_name)
-        time.sleep(2)  # Wait for autocomplete
+        time.sleep(2) 
         
         try:
             self.click(self.employee_autocomplete_option)
@@ -131,9 +129,8 @@ class TimesheetPage(BasePage):
             except Exception as e:
                 logging.warning(f"⚠️ Error checking timesheet hours: {str(e)}")
                 
-                # Fallback verification - check if table has content
                 table_html = self.get_element_html(self.timesheet_table)
-                has_content = len(table_html.strip()) > 50  # Arbitrary length check
+                has_content = len(table_html.strip()) > 50  
                 logging.info(f"Fallback verification - table has content: {has_content}")
                 return has_content
         else:

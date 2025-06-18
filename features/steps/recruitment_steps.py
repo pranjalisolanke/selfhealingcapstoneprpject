@@ -19,18 +19,14 @@ def step_click_add_button(context):
 @when('I enter candidate details')
 def step_enter_candidate_details(context):
     logging.info("Entering candidate details")
-    # Get the first row of data from the table
     row = context.table[0]
     first_name = row['First Name']
     middle_name = row['Middle Name']
     last_name = row['Last Name']
     email = row['Email']
     vacancy = row['Vacancy']
-    
-    # Store for later verification
+
     context.candidate_full_name = f"{first_name} {middle_name} {last_name}"
-    
-    # Enter the details
     context.recruitment_page.enter_candidate_details(
         first_name=first_name,
         middle_name=middle_name,

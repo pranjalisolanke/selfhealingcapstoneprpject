@@ -13,7 +13,7 @@ class BasePage:
         :param strategies: Tuple locator strategies (By.TYPE, "value")
         :return: AISelfHealingLocator instance
         """
-        # Make sure we're passing the strategies correctly
+
         return AISelfHealingLocator(name, description, *strategies)
     
     def click(self, locator):

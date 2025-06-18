@@ -18,16 +18,11 @@ def step_enter_password(context, password):
 @when('I click on the login button using intelligent locator detection')
 def step_click_login(context):
     context.login_page.click(context.login_page.login_button)
-    
-    # Create the dashboard page after clicking login
     context.dashboard_page = DashboardPage(context.driver)
-    
-    # Wait for dashboard to load
     context.dashboard_page.wait_for_page_load()
 
 @then('I should be logged in successfully')
 def step_verify_login_success(context):
-    # Check if the user dropdown is visible (indicates successful login)
     assert context.dashboard_page.is_element_visible(context.dashboard_page.user_dropdown), "Login failed - user dropdown not visible"
 
 @then('I should see the dashboard')

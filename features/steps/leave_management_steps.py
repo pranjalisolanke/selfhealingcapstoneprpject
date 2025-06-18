@@ -15,7 +15,6 @@ def step_click_my_leave(context):
 
 @when('I select leave details')
 def step_select_leave_details(context):
-    # Get the first row of data (excluding header)
     row = context.table[0]
     leave_type = row['Leave Type']
     from_date = row['From Date']

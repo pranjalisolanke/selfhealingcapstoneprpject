@@ -1,4 +1,3 @@
-# features/leave_management.feature
 Feature: Leave Management with AI Self-Healing
 
   Scenario: Apply for leave with AI-enhanced locators

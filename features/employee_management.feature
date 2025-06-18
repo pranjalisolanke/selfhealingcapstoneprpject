@@ -1,4 +1,3 @@
-# features/employee_management.feature
 Feature: Employee Management with AI Self-Healing
 
   Scenario: Add a new employee with AI self-healing locators

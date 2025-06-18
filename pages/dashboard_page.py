@@ -1,4 +1,3 @@
-# pages/dashboard_page.py
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 import time
@@ -10,27 +9,24 @@ class DashboardPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
         
-        # Define locators with intentionally wrong strategies to demonstrate AI healing
         self.user_dropdown = self.create_ai_locator(
             "user_dropdown",
             "User dropdown menu in the top right corner with the user's name",
-            (By.CSS_SELECTOR, ".wrong-user-dropdown")  # Wrong locator
+            (By.CSS_SELECTOR, ".wrong-user-dropdown")  
         )
         
-        # Dashboard elements
         self.dashboard_heading = self.create_ai_locator(
             "dashboard_heading",
             "Dashboard heading or title on the main dashboard page",
-            (By.CSS_SELECTOR, "h6.wrong-dashboard-heading")  # Wrong locator
+            (By.CSS_SELECTOR, "h6.wrong-dashboard-heading")  #
         )
         
         self.quick_launch_panel = self.create_ai_locator(
             "quick_launch_panel",
             "Quick Launch panel on dashboard with shortcut icons",
-            (By.CSS_SELECTOR, ".wrong-quick-launch")  # Wrong locator
+            (By.CSS_SELECTOR, ".wrong-quick-launch") 
         )
         
-        # Main menu items
         self.admin_menu_item = self.create_ai_locator(
             "admin_menu_item",
             "Admin module menu item in the left sidebar navigation",

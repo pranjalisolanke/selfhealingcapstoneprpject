@@ -1,6 +1,6 @@
 Feature: OrangeHRM Recruitment Management
 
-    Scenario: Add a new candidate
+    Scenario: Add a new candidate with AI-enhanced locators
         Given I am logged in as an admin
         When I navigate to recruitment module
         And I click on the add button
