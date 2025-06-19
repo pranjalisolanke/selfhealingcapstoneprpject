@@ -94,10 +94,13 @@ def after_scenario(context, scenario):
                     result_login = update_source_code_with_locators("pages/login_page.py", context.driver.learned_locators)
                     # Update pim_page.py
                     result_pim = update_source_code_with_locators("pages/pim_page.py", context.driver.learned_locators)
+                    result_dashboard = update_source_code_with_locators("pages/dashboard_page.py", context.driver.learned_locators)
                     # Update leave_page.py
                     result_leave = update_source_code_with_locators("pages/leave_page.py", context.driver.learned_locators)
                     result_time = update_source_code_with_locators("pages/timesheet_page.py", context.driver.learned_locators)
-                    if result_login or result_pim or result_leave or result_time:
+                    result_recruitment = update_source_code_with_locators("pages/recruitment_page.py", context.driver.learned_locators)
+                    
+                    if result_login or result_pim or result_dashboard or result_leave or result_time or result_recruitment:
                         print("✅ Source code updated successfully for login_page.py, pim_page.py, and/or leave_page.py")
                     else:
                         print("ℹ️ No source code updates were needed")
